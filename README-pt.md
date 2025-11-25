@@ -10,7 +10,7 @@ redes neurais convolucionais (CNN) e Vision Transformers (ViT) para classificar
 bolsa e presença de chapéu.
 
 Dataset utilizado: PAR2025
-Repositório da equipe: https://github.com/MatheusKozak/Clothing-Detection-Challenge
+Repositório do dataset: https://github.com/MatheusKozak/Clothing-Detection-Challenge
 
 --------------------------------------------------------------------------
 ESTRUTURA DE NOMENCLATURA DOS ARQUIVOS
@@ -37,20 +37,6 @@ Estrutura interna: Os notebooks são organizados em seções markdown como:
 - Gênero
 - Bolsa
 - Chapéu
-
-RELATÓRIOS PDF:
-Os arquivos PDF seguem o padrão de nomenclatura detalhado:
-[TAMANHO]-[ÉPOCAS]-[ARQUITETURA]-[MODELO]-[TIPO].pdf
-
-Onde:
-- TAMANHO: dimensão das imagens (68x68, 128x128, 224x224)
-- ÉPOCAS: número de épocas de treinamento (5, 10, 20, 40)
-- ARQUITETURA: CNN ou ViT (Vision Transformer)
-- MODELO: ResNet18, EfficientNetB0, MobileNetV2
-- TIPO: "todos" ou "individual"
-
-Exemplo: "128x128-5-CNN-ResNet18-individual.pdf"
-Significa: imagens 128x128, 5 épocas, CNN com ResNet18, modelos individuais
 
 --------------------------------------------------------------------------
 ATRIBUTOS CLASSIFICADOS
@@ -106,121 +92,74 @@ DESCRIÇÃO DOS ARTEFATOS
 
 NOTEBOOKS (.ipynb) - SCRIPTS DE TREINAMENTO
 
-0-CNN-ResNet18-DataAugmentation.ipynb
-  Função: Implementação de técnicas de data augmentation no dataset
-  Objetivo: Aumentar a variabilidade dos dados para melhorar generalização
-
-0.1-Baixando a qualidade das imagens.ipynb
-  Função: Redução controlada da qualidade das imagens customizadas (ood_padded_images)
-  Objetivo: Gerar versões de menor qualidade das imagens de familiares para testes de robustez
-  Saída: Diretório ./ood_low_quality_images/
-
-1-CNN-ResNet18-individual.ipynb
+1-CNN-ResNet18-individual.py
   Função: Treinamento de 5 modelos separados usando ResNet18
   Abordagem: Um modelo independente para cada atributo
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 5 arquivos .pth (um por atributo)
 
-1.1-CNN-ResNet18-todos.ipynb
+1.1-CNN-ResNet18-todos.py
   Função: Treinamento de modelo multi-tarefa usando ResNet18
   Abordagem: Modelo único que prediz os 5 atributos simultaneamente
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 1 arquivo .pth multi-tarefa
 
-1.2-CNN-ResNet18-todos.ipynb
-  Função: Variação experimental do treinamento multi-tarefa ResNet18
-  Abordagem: Testes com ajustes de hiperparâmetros
-
-2-CNN-EfficientNetB0-individual.ipynb
+2-CNN-EfficientNetB0-individual.py
   Função: Treinamento de 5 modelos separados usando EfficientNetB0
   Abordagem: Um modelo independente para cada atributo
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 5 arquivos .pth (um por atributo)
 
-2.1-CNN-EfficientNetB0-todos.ipynb
+2.1-CNN-EfficientNetB0-todos.py
   Função: Treinamento de modelo multi-tarefa usando EfficientNetB0
   Abordagem: Modelo único que prediz os 5 atributos simultaneamente
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 1 arquivo .pth multi-tarefa
 
-2.2-CNN-EfficientNetB0-todos.ipynb
-  Função: Variação experimental do treinamento multi-tarefa EfficientNetB0
-  Abordagem: Testes com ajustes de hiperparâmetros
-
-3-CNN-MobileNetV2-individual.ipynb
+3-CNN-MobileNetV2-individual.py
   Função: Treinamento de 5 modelos separados usando MobileNetV2
   Abordagem: Um modelo independente para cada atributo
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 5 arquivos .pth (um por atributo)
 
-3.1-CNN-MobileNetV2-todos.ipynb
+3.1-CNN-MobileNetV2-todos.py
   Função: Treinamento de modelo multi-tarefa usando MobileNetV2
   Abordagem: Modelo único que prediz os 5 atributos simultaneamente
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 1 arquivo .pth multi-tarefa
 
-4-ViT-individual.ipynb
+4-ViT-individual.py
   Função: Treinamento de 5 modelos separados usando Vision Transformer
   Abordagem: Um modelo independente para cada atributo
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 5 arquivos .pth (um por atributo)
 
-4.1-ViT-todos.ipynb
+4.1-ViT-todos.py
   Função: Treinamento de modelo multi-tarefa usando Vision Transformer
   Abordagem: Modelo único que prediz os 5 atributos simultaneamente
   Parâmetros: IMAGE_SIZE (variável), EPOCHS (variável), LR=1e-4, BATCH_SIZE=128
   Saída: 1 arquivo .pth multi-tarefa
 
-5-CNN-ResNet18&EfficientNetB0-todos.ipynb
+5-CNN-ResNet18&EfficientNetB0-todos.py
   Função: Comparação e análise de ensemble
   Abordagem: Combinação das arquiteturas ResNet18 e EfficientNetB0
   Objetivo: Avaliar ganhos de desempenho com múltiplos modelos
 
 
-MODELOS TREINADOS (.pth)
+--------------------------------------------------------------------------
+NOTA SOBRE ARQUIVOS NÃO INCLUÍDOS
+--------------------------------------------------------------------------
 
-best_efficientnet_multitask.pth
-  Descrição: Melhor modelo EfficientNetB0 multi-tarefa
-  Tamanho: 15,7 MB
-  Função: Pesos do modelo treinado para classificação dos 5 atributos
-  Uso: Carregar com torch.load() para inferência ou fine-tuning
+Os seguintes arquivos NÃO estão incluídos neste repositório por questões de 
+tamanho e privacidade:
 
-best_multitask_resnet18_full.pth
-  Descrição: Melhor modelo ResNet18 multi-tarefa completo
-  Tamanho: 42,8 MB
-  Função: Pesos do modelo treinado completo
-  Uso: Carregar com torch.load() para inferência
-
-best_multitask_resnet18_state.pth
-  Descrição: State dict do melhor modelo ResNet18 multi-tarefa
-  Tamanho: 42,8 MB
-  Função: Dicionário de estados do modelo (apenas pesos)
-  Uso: Carregar com model.load_state_dict(torch.load())
+- Modelos treinados (.pth): 15-43 MB cada
+- Relatórios PDF com resultados experimentais
+- Imagens OOD (ood_padded_images/ e ood_low_quality_images/)
+- Arquivo gabarito_imagens.txt
 
 
-DIRETÓRIOS E ARQUIVOS AUXILIARES
-
-./ood_padded_images/
-  Descrição: Pasta contendo imagens de familiares processadas com padding
-  Função: Dataset customizado com imagens cortadas e normalizadas
-  Conteúdo: Imagens em formato .jpg/.png de teste em ambiente real
-
-./ood_low_quality_images/
-  Descrição: Pasta com versões de qualidade reduzida das imagens customizadas
-  Função: Dataset para teste de robustez dos modelos com imagens de menor qualidade
-  Origem: Geradas a partir das imagens em ./ood_padded_images/ usando o notebook "0.1-Baixando a qualidade das imagens.ipynb"
-
-gabarito_imagens.txt
-  Descrição: Arquivo de gabarito com labels manuais
-  Tamanho: 3 KB
-  Função: Ground truth para as imagens customizadas (ood_padded_images)
-  Formato: Texto com labels anotados manualmente pela equipe
-  Uso: Validação e teste dos modelos em imagens reais
-
-2025-2-BCC-PT2-TemplatePoster/
-  Descrição: Pasta com template do pôster científico
-  Tamanho: 6 MB
-  Função: Material para apresentação do projeto
+DIRETÓRIOS E DATASETS
 
 training_set/
   Descrição: Diretório original do dataset de treinamento
