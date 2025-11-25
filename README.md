@@ -1,4 +1,4 @@
-# Pedestrian Attribute Recognition with Deep Learning
+# Evaluation of Deep Models for Pedestrian Attribute Recognition
 
 **This project documentation is available in two languages:**  
 🇧🇷 [README em Português](README-pt.md)  
