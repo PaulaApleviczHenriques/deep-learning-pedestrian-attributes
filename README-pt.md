@@ -1,4 +1,3 @@
-
 --------------------------------------------------------------------------
 AVALIAÇÃO DE MODELOS PROFUNDOS PARA RECONHECIMENTO DE ATRIBUTOS DE PEDESTRES
 --------------------------------------------------------------------------
@@ -176,28 +175,6 @@ NOTEBOOKS (.ipynb) - SCRIPTS DE TREINAMENTO
   Função: Comparação e análise de ensemble
   Abordagem: Combinação das arquiteturas ResNet18 e EfficientNetB0
   Objetivo: Avaliar ganhos de desempenho com múltiplos modelos
-
-
-RELATÓRIOS PDF
-
-Os arquivos PDF documentam os experimentos realizados com diferentes 
-configurações de tamanho de imagem, número de épocas e arquiteturas.
-Cada PDF contém:
-- Gráficos de loss e accuracy por época
-- Métricas finais de desempenho (accuracy, precision, recall, F1-score)
-- Matrizes de confusão por atributo
-- Análise comparativa de resultados
-
-Arquivos disponíveis:
-- 68x68-5-CNN-ResNet18-individual.pdf
-- 128x128-5-CNN-EfficientNetB0-individual.pdf
-- 224x224-10-CNN-EfficientNetB0-individual.pdf
-- 224x224-20-CNN-EfficientNetB0-individual.pdf
-- 224x224-20-CNN-MobileNetV2-todos.pdf
-- 224x224-40-CNN-EfficientNetB0-todos.pdf
-- 224x224-40-CNN-MobileNetV2-todos.pdf
-- 224x224-40-ViT-todos.pdf
-- 224x244-40-CNN-ResNet18-todos.pdf
 
 
 MODELOS TREINADOS (.pth)
