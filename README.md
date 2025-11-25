@@ -21,4 +21,4 @@ This repository documents my implementation, experiments, and learnings througho
 ## Credits
 
 Created by:
-- [@Paulaaplevcz](https://github.com/Paulaaplevcz)
+- [@Paulaaplevcz](https://github.com/PaulaApleviczHenriques)
