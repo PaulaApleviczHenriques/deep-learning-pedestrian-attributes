@@ -9,7 +9,7 @@ networks (CNN) and Vision Transformers (ViT) were tested to classify 5 attribute
 upper clothing color, lower clothing color, gender, bag presence, and hat presence.
 
 Dataset used: PAR2025
-Team repository: https://github.com/MatheusKozak/Clothing-Detection-Challenge
+Dataset repository: https://github.com/MatheusKozak/Clothing-Detection-Challenge
 
 --------------------------------------------------------------------------
 FILE NAMING STRUCTURE
@@ -36,20 +36,6 @@ Internal structure: Notebooks are organized in markdown sections like:
 - Gender
 - Bag
 - Hat
-
-PDF REPORTS:
-PDF files follow the detailed naming pattern:
-[SIZE]-[EPOCHS]-[ARCHITECTURE]-[MODEL]-[TYPE].pdf
-
-Where:
-- SIZE: image dimensions (68x68, 128x128, 224x224)
-- EPOCHS: number of training epochs (5, 10, 20, 40)
-- ARCHITECTURE: CNN or ViT (Vision Transformer)
-- MODEL: ResNet18, EfficientNetB0, MobileNetV2
-- TYPE: "todos" or "individual"
-
-Example: "128x128-5-CNN-ResNet18-individual.pdf"
-Means: 128x128 images, 5 epochs, CNN with ResNet18, individual models
 
 --------------------------------------------------------------------------
 CLASSIFIED ATTRIBUTES
@@ -126,10 +112,6 @@ NOTEBOOKS (.ipynb) - TRAINING SCRIPTS
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
 
-1.2-CNN-ResNet18-todos.ipynb
-  Function: Experimental variation of ResNet18 multi-task training
-  Approach: Tests with hyperparameter adjustments
-
 2-CNN-EfficientNetB0-individual.ipynb
   Function: Training 5 separate models using EfficientNetB0
   Approach: One independent model for each attribute
@@ -141,10 +123,6 @@ NOTEBOOKS (.ipynb) - TRAINING SCRIPTS
   Approach: Single model that predicts all 5 attributes simultaneously
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
-
-2.2-CNN-EfficientNetB0-todos.ipynb
-  Function: Experimental variation of EfficientNetB0 multi-task training
-  Approach: Tests with hyperparameter adjustments
 
 3-CNN-MobileNetV2-individual.ipynb
   Function: Training 5 separate models using MobileNetV2
@@ -176,50 +154,20 @@ NOTEBOOKS (.ipynb) - TRAINING SCRIPTS
   Objective: Evaluate performance gains with multiple models
 
 
-TRAINED MODELS (.pth)
+--------------------------------------------------------------------------
+NOTE ABOUT FILES NOT INCLUDED
+--------------------------------------------------------------------------
 
-best_efficientnet_multitask.pth
-  Description: Best EfficientNetB0 multi-task model
-  Size: 15.7 MB
-  Function: Trained model weights for classifying all 5 attributes
-  Usage: Load with torch.load() for inference or fine-tuning
+The following files are NOT included in this repository due to size and 
+privacy concerns:
 
-best_multitask_resnet18_full.pth
-  Description: Best complete ResNet18 multi-task model
-  Size: 42.8 MB
-  Function: Complete trained model weights
-  Usage: Load with torch.load() for inference
-
-best_multitask_resnet18_state.pth
-  Description: State dict of best ResNet18 multi-task model
-  Size: 42.8 MB
-  Function: Model state dictionary (weights only)
-  Usage: Load with model.load_state_dict(torch.load())
+- Trained models (.pth): 15-43 MB each
+- PDF reports with experimental results
+- OOD images (ood_padded_images/ and ood_low_quality_images/)
+- gabarito_imagens.txt file
 
 
-DIRECTORIES AND AUXILIARY FILES
-
-./ood_padded_images/
-  Description: Folder containing processed family images with padding
-  Function: Custom dataset with cropped and normalized images
-  Content: Images in .jpg/.png format for real-world testing
-
-./ood_low_quality_images/
-  Description: Folder with reduced quality versions of custom images
-  Function: Dataset for robustness testing of models with lower quality images
-  Origin: Generated from images in ./ood_padded_images/ using notebook "0.1-Baixando a qualidade das imagens.ipynb"
-
-gabarito_imagens.txt
-  Description: Answer key file with manual labels
-  Size: 3 KB
-  Function: Ground truth for custom images (ood_padded_images)
-  Format: Text with manually annotated labels by the team
-  Usage: Validation and testing of models on real images
-
-2025-2-BCC-PT2-TemplatePoster/
-  Description: Folder with scientific poster template
-  Size: 6 MB
-  Function: Material for project presentation
+DIRECTORIES AND DATASETS
 
 training_set/
   Description: Original training dataset directory
