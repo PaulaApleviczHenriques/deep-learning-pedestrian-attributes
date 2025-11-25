@@ -176,28 +176,6 @@ NOTEBOOKS (.ipynb) - TRAINING SCRIPTS
   Objective: Evaluate performance gains with multiple models
 
 
-PDF REPORTS
-
-PDF files document experiments performed with different configurations 
-of image size, number of epochs, and architectures.
-Each PDF contains:
-- Loss and accuracy graphs per epoch
-- Final performance metrics (accuracy, precision, recall, F1-score)
-- Confusion matrices per attribute
-- Comparative analysis of results
-
-Available files:
-- 68x68-5-CNN-ResNet18-individual.pdf
-- 128x128-5-CNN-EfficientNetB0-individual.pdf
-- 224x224-10-CNN-EfficientNetB0-individual.pdf
-- 224x224-20-CNN-EfficientNetB0-individual.pdf
-- 224x224-20-CNN-MobileNetV2-todos.pdf
-- 224x224-40-CNN-EfficientNetB0-todos.pdf
-- 224x224-40-CNN-MobileNetV2-todos.pdf
-- 224x224-40-ViT-todos.pdf
-- 224x244-40-CNN-ResNet18-todos.pdf
-
-
 TRAINED MODELS (.pth)
 
 best_efficientnet_multitask.pth
