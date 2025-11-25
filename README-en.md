@@ -91,64 +91,64 @@ ARTIFACTS DESCRIPTION
 
 NOTEBOOKS (.ipynb) - TRAINING SCRIPTS
 
-0-CNN-ResNet18-DataAugmentation.ipynb
+0-CNN-ResNet18-DataAugmentation.py
   Function: Implementation of data augmentation techniques on the dataset
   Objective: Increase data variability to improve generalization
 
-0.1-Baixando a qualidade das imagens.ipynb
+0.1-Baixando a qualidade das imagens.py
   Function: Controlled reduction of custom image quality (ood_padded_images)
   Objective: Generate lower quality versions of family images for robustness tests
   Output: Directory ./ood_low_quality_images/
 
-1-CNN-ResNet18-individual.ipynb
+1-CNN-ResNet18-individual.py
   Function: Training 5 separate models using ResNet18
   Approach: One independent model for each attribute
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 5 .pth files (one per attribute)
 
-1.1-CNN-ResNet18-todos.ipynb
+1.1-CNN-ResNet18-todos.ipy
   Function: Multi-task model training using ResNet18
   Approach: Single model that predicts all 5 attributes simultaneously
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
 
-2-CNN-EfficientNetB0-individual.ipynb
+2-CNN-EfficientNetB0-individual.py
   Function: Training 5 separate models using EfficientNetB0
   Approach: One independent model for each attribute
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 5 .pth files (one per attribute)
 
-2.1-CNN-EfficientNetB0-todos.ipynb
+2.1-CNN-EfficientNetB0-todos.py
   Function: Multi-task model training using EfficientNetB0
   Approach: Single model that predicts all 5 attributes simultaneously
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
 
-3-CNN-MobileNetV2-individual.ipynb
+3-CNN-MobileNetV2-individual.py
   Function: Training 5 separate models using MobileNetV2
   Approach: One independent model for each attribute
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 5 .pth files (one per attribute)
 
-3.1-CNN-MobileNetV2-todos.ipynb
+3.1-CNN-MobileNetV2-todos.py
   Function: Multi-task model training using MobileNetV2
   Approach: Single model that predicts all 5 attributes simultaneously
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
 
-4-ViT-individual.ipynb
+4-ViT-individual.py
   Function: Training 5 separate models using Vision Transformer
   Approach: One independent model for each attribute
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 5 .pth files (one per attribute)
 
-4.1-ViT-todos.ipynb
+4.1-ViT-todos.py
   Function: Multi-task model training using Vision Transformer
   Approach: Single model that predicts all 5 attributes simultaneously
   Parameters: IMAGE_SIZE (variable), EPOCHS (variable), LR=1e-4, BATCH_SIZE=128
   Output: 1 multi-task .pth file
 
-5-CNN-ResNet18&EfficientNetB0-todos.ipynb
+5-CNN-ResNet18&EfficientNetB0-todos.py
   Function: Comparison and ensemble analysis
   Approach: Combination of ResNet18 and EfficientNetB0 architectures
   Objective: Evaluate performance gains with multiple models
