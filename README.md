@@ -1,13 +1,12 @@
-# deep-learning-pedestrian-attributes
-Multi-attribute classification of pedestrians using Deep Learning. Implements and compares CNN architectures (ResNet18, EfficientNetB0, MobileNetV2) and Vision Transformers for recognizing clothing colors, gender, bag and hat presence. Computer Science Bachelor's thesis project.
+# Pedestrian Attribute Recognition with Deep Learning
 
-Pedestrian Attribute Recognition with Deep Learning
-
-This project summary is available in two languages:
+**This project summary is available in two languages:**
 🇧🇷 Experiência em português
 🇺🇸 Experience in English
 
-Summary
+---
+
+##Summary
 
 For my Computer Science Bachelor's thesis, I tackled the challenge of building and evaluating deep learning models for pedestrian attribute recognition using the PAR2025 dataset with over 105,000 images.
 
